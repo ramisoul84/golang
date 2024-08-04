@@ -119,7 +119,7 @@ func intToRoman(num int) string {
 }
 
 func moreTen(n int)bool{
-	if n >10{
+	if n > 10 || n < 1{
 		return true
 	} else{
 		return false
@@ -179,7 +179,7 @@ func main() {
 			number1D := romanToDecimal(operands[0])
 			number2D := romanToDecimal(operands[1])	
 			if moreTen(number1D) || moreTen(number2D){
-				panic("один из операндов больше 10")
+				panic("числа только от 1 до 10 включительно")
 			}
 			x := result(number1D,number2D,op)
 			if x<1{
@@ -193,7 +193,7 @@ func main() {
 			number1D, _ := strconv.Atoi(operands[0])
 			number2D, _ := strconv.Atoi(operands[1])
 			if moreTen(number1D) || moreTen(number2D){
-				panic("один из операндов больше 10")
+				panic("числа только от 1 до 10 включительно")
 			}
 			
 			res =strconv.Itoa(result(number1D,number2D,op) )
